@@ -8,11 +8,13 @@ import { PokemonService } from '../../core/services/pokemon.service';
 import { PokemonRepository } from '../../core/repositories/pokemon.repository';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { CapitalizePipe } from '../../core/pipes/capitalize.pipe';
+import { LimitListPipe } from '../../core/pipes/limitList.pipe';
 
 
 @NgModule({
   declarations: [
     CapitalizePipe,
+    LimitListPipe,
     PokemonListComponent,
     PokemonDetailComponent,
     PokemonCardComponent

@@ -1,0 +1,9 @@
+.title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff6f61; /* Un rojo-naranja vibrante inspirado en Pokémon */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: 'Press Start 2P', cursive; /* Fuente retro estilo Pokémon */
+    margin: 20px 0;
+  }

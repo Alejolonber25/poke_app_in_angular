@@ -1,54 +1,60 @@
 <div class="pokemon-detail">
-    <div class="pokemon-header">
-      <h1>{{ pokemon.name | capitalize }}</h1>
-      <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" class="pokemon-image" />
-    </div>
-  
-    <div class="pokemon-stats">
-      <h2>Stats</h2>
-      <ul>
-        <li *ngFor="let stat of pokemon.stats">
-          <strong>{{ stat.stat.name | capitalize }}:</strong> {{ stat.base_stat }}
-        </li>
-      </ul>
-    </div>
-  
-    <div class="pokemon-abilities">
-      <h2>Abilities</h2>
-      <ul>
-        <li *ngFor="let ability of pokemon.abilities">
-          {{ ability.ability.name | capitalize }}
-        </li>
-      </ul>
-    </div>
-  
-    <div class="pokemon-types">
-      <h2>Types</h2>
-      <ul>
-        <li *ngFor="let type of pokemon.types">
-          {{ type.type.name | capitalize }}
-        </li>
-      </ul>
-    </div>
-  
-    <div class="pokemon-moves">
-      <h2>Moves</h2>
-      <ul>
-        <li *ngFor="let move of pokemon.moves">
-          {{ move.move.name | capitalize }}
-        </li>
-      </ul>
-    </div>
-  
-    <div class="pokemon-other-info">
-      <h2>Additional Information</h2>
-      <p><strong>Base Experience:</strong> {{ pokemon.base_experience }}</p>
-      <p><strong>Height:</strong> {{ pokemon.height }}m</p>
-      <p><strong>Weight:</strong> {{ pokemon.weight }}kg</p>
-    </div>
-  
-    <div class="back-button">
-      <button (click)="goBack()">Back to list</button>
-    </div>
+  <div class="pokemon-header">
+    <h1>{{ pokemon.name | capitalize }}</h1>
+    <img [src]="pokemon.sprites.front_default" alt="{{ pokemon.name }}" class="pokemon-image" />
   </div>
-  
+
+  <div class="back-button">
+    <button (click)="goBack()">Back to list</button>
+  </div>
+
+  <div class="pokemon-stats">
+    <h2>Stats</h2>
+    <ul>
+      <li *ngFor="let stat of pokemon.stats">
+        <strong>{{ stat.stat.name | capitalize }}:</strong> {{ stat.base_stat }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="pokemon-abilities">
+    <h2>Abilities</h2>
+    <ul>
+      <li *ngFor="let ability of pokemon.abilities">
+        {{ ability.ability.name | capitalize }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="pokemon-types">
+    <h2>Types</h2>
+    <ul>
+      <li *ngFor="let type of pokemon.types">
+        {{ type.type.name | capitalize }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="pokemon-moves">
+    <h2>Moves</h2>
+    <ul>
+      <li *ngFor="let move of pokemon.moves | limitList:5:showAllMoves">
+        {{ move.move.name | capitalize }}
+      </li>
+    </ul>
+    <div class="showMoreOrLess-button">
+      <button (click)="toggleMoves()">
+        {{ showAllMoves ? 'Show Less' : 'Show More' }}
+      </button>
+    </div>
+    
+  </div>
+
+  <div class="pokemon-other-info">
+    <h2>Additional Information</h2>
+    <p><strong>Base Experience:</strong> {{ pokemon.base_experience }}</p>
+    <p><strong>Height:</strong> {{ pokemon.height }}m</p>
+    <p><strong>Weight:</strong> {{ pokemon.weight }}kg</p>
+  </div>
+
+</div>

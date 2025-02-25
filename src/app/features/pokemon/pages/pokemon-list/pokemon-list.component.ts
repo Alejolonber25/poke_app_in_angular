@@ -10,9 +10,9 @@ import { Pokemon } from '../../../../core/models/pokemon.interface';
   standalone: false
 })
 export class PokemonListComponent implements OnInit {
-  pokemons: Pokemon[] = []; 
+  pokemons: Pokemon[] = [];
 
-  constructor(private pokemonService: PokemonService, private router: Router){}
+  constructor(private pokemonService: PokemonService, private router: Router) { }
 
   ngOnInit(): void {
     this.pokemonService.getPokemons().subscribe((pokemons: Pokemon[]) => {
@@ -20,4 +20,4 @@ export class PokemonListComponent implements OnInit {
     });
   }
 
-  }
+}

@@ -13,8 +13,9 @@ import { Location } from '@angular/common';
 export class PokemonDetailComponent {
 
   pokemon!: Pokemon;
+  showAllMoves = false;
 
-  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private location: Location){}
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -27,6 +28,10 @@ export class PokemonDetailComponent {
 
   goBack(): void {
     this.location.back();
+  }
+
+  toggleMoves() {
+    this.showAllMoves = !this.showAllMoves;
   }
 
 }
