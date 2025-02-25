@@ -5,9 +5,7 @@ import { map } from 'rxjs/operators';
 import { PrePokemon, Pokemon } from '../models/pokemon.interface';
 
 
-@Injectable({
-  providedIn: 'root', // Esto hace que el servicio sea accesible en toda la aplicación
-})
+@Injectable()
 export class PokemonRepository {
   private readonly url ? = 'https://pokeapi.co/api/v2/pokemon';
   constructor(private http: HttpClient) { }

@@ -5,9 +5,7 @@ import { forkJoin } from 'rxjs';
 import { PrePokemon, Pokemon } from '../models/pokemon.interface';
 import { PokemonRepository } from '../repositories/pokemon.repository';
 
-@Injectable({
-  providedIn: 'root', // Esto hace que el servicio sea accesible en toda la aplicación
-})
+@Injectable()
 export class PokemonService {
 
   constructor(readonly pokemonRepository: PokemonRepository) {}
